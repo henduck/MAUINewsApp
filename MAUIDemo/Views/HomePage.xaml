@@ -7,7 +7,7 @@
              Title="Home">
     <ContentPage.Resources>
         <Style TargetType="StackLayout" x:Key="HeaderStack">
-            <Setter Property="Margin" Value="10,16,10,4"/>
+            <Setter Property="Margin" Value="10,16,10,10"/>
             <Setter Property="Orientation" Value="Horizontal"/>
             <Setter Property="Padding" Value="20,0"/>
         </Style>
@@ -18,22 +18,28 @@
         </Style>
         <Style TargetType="Label" x:Key="ShowAll">
             <Setter Property="HorizontalOptions" Value="End"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="TextColor" Value="{StaticResource Primary}"/>
             <Setter Property="VerticalOptions" Value="End"/>
         </Style>
+        <Style TargetType="BoxView">
+            <Setter Property="HeightRequest" Value="1"/>
+            <Setter Property="Color" Value="#eee"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+        </Style>
         <DataTemplate x:DataType="models:Article" x:Key="ArticleTemplate">
-            <StackLayout Orientation="Vertical" Margin="10,0,0,0">
+            <StackLayout Orientation="Vertical" Margin="10,0,0,0" WidthRequest="300" HeightRequest="260">
                 <Frame Padding="0" IsClippedToBounds="True" BorderColor="Transparent">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}}, Path=TappedCommand}"/>
                     </Frame.GestureRecognizers>
-                    <Image Source="{Binding ImageURL}" HeightRequest="140" WidthRequest="260" Aspect="AspectFill" />
+                    <Image Source="{Binding ImageURL}" HeightRequest="180" WidthRequest="300" Aspect="AspectFill" />
                 </Frame>
-                <Label Text="{Binding Title}" FontFamily="OpenSansSemibold" MaxLines="2"/>
+                <Label Text="{Binding Title}" FontSize="18" FontFamily="PoppinsSemibold" MaxLines="2"/>
                 <StackLayout Orientation="Horizontal" Spacing="2">
                     <Label Text="{Binding Category}" TextColor="{StaticResource Primary}"/>
-                    <Label Text="·"/>
-                    <Label Text="{Binding Time}"/>
+                    <Label Text="·" FontAttributes="Bold" TextColor="{StaticResource Gray200}"/>
+                    <Label Text="{Binding Time}" TextColor="{StaticResource Gray200}"/>
                 </StackLayout>
             </StackLayout>
         </DataTemplate>
@@ -44,19 +50,24 @@
                 <Label Text="Popular tags" Style="{StaticResource SectionHeading}"/>
                 <Label Text="Show All" Style="{StaticResource ShowAll}"/>
             </StackLayout>
-            
-            <!-- TODO: flow layout for tag buttons? -->
-            <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Tags}" Padding="10,0" Spacing="4">
+
+            <FlexLayout BindableLayout.ItemsSource="{Binding Tags}"
+                        Wrap="Wrap"
+                        Margin="10,0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Frame BackgroundColor="#f2f2f2"
                                BorderColor="Transparent"
-                               Padding="10,4">
-                            <Label Text="{Binding .}" />
+                               CornerRadius="4"
+                               Padding="8,2"
+                               Margin="0,0,4,10">
+                            <Label Text="{Binding .}" FontFamily="PoppinsSemibold"/>
                         </Frame>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
-            </StackLayout>
+            </FlexLayout>
+
+            <BoxView />
 
             <StackLayout Style="{StaticResource HeaderStack}">
                 <Label Text="Latest news" Style="{StaticResource SectionHeading}"/>
@@ -65,7 +76,9 @@
             <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
                 <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding LatestArticles}" BindableLayout.ItemTemplate="{StaticResource ArticleTemplate}"/>
             </ScrollView>
-            
+
+            <BoxView />
+
             <StackLayout Style="{StaticResource HeaderStack}">
                 <Label Text="Recommended for you" Style="{StaticResource SectionHeading}"/>
                 <Label Text="Show All" Style="{StaticResource ShowAll}"/>
@@ -73,6 +86,8 @@
             <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
                 <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding RecommendedArticles}" BindableLayout.ItemTemplate="{StaticResource ArticleTemplate}"/>
             </ScrollView>
+
+            <BoxView />
 
             <StackLayout Style="{StaticResource HeaderStack}">
                 <Label Text="Popular articles" Style="{StaticResource SectionHeading}"/>

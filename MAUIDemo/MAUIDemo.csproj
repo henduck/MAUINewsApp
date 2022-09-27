@@ -61,6 +61,9 @@
 	  <None Remove="Resources\Images\categories.png" />
 	  <None Remove="Resources\Images\bookmarks.png" />
 	  <None Remove="Resources\Images\profile.png" />
+	  <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Poppins-SemiBold.ttf" />
+	  <None Remove="Resources\Fonts\Poppins-Bold.ttf" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />

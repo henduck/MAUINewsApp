@@ -9,14 +9,23 @@ namespace MAUIDemo.ViewModels
 		{
 			this.Tags = new List<string>()
 			{
-				"#Test1",
-				"#Hello",
-				"#What!!"
-			};
+                "#today",
+                "#health",
+                "#politics",
+                "#nature",
+                "#music",
+                "#arts",
+                "#marketing",
+                "#business",
+                "#science",
+                "#world",
+                "#sports",
+                "#party"
+            };
 
 			this.LatestArticles = new List<Article>()
 			{
-				new Article("Some Article Title Here", "https://picsum.photos/seed/one/300/200", "This is the body, it's very long!", "Business", "8m ago"),
+				new Article("Some Article Title Here. However, in a twist, this one is a bit longer.", "https://picsum.photos/seed/one/300/200", "This is the body, it's very long!", "Business", "8m ago"),
 				new Article("And another one!", "https://picsum.photos/seed/two/300/200", "This is ALSO the body, it's very long!", "Sports", "12m ago"),
                 new Article("Wait, There's More.", "https://picsum.photos/seed/three/300/200", "Blah blah blah. Talking talking talking.", "Science", "16m ago"),
                 new Article("Just Another", "https://picsum.photos/seed/four/300/200", "I'm tired of making up fake content.", "Politics", "23m ago")
@@ -24,7 +33,7 @@ namespace MAUIDemo.ViewModels
 
             this.RecommendedArticles = new List<Article>()
             {
-                new Article("Some Article Title Here", "https://picsum.photos/seed/five/300/200", "This is the body, it's very long!", "Business", "8m ago"),
+                new Article("You know, not all titles are the same length. Some go on for days and days, some only stay a moment.", "https://picsum.photos/seed/five/300/200", "This is the body, it's very long!", "Business", "8m ago"),
                 new Article("And another one!", "https://picsum.photos/seed/six/300/200", "This is ALSO the body, it's very long!", "Sports", "12m ago"),
                 new Article("Wait, There's More.", "https://picsum.photos/seed/seven/300/200", "Blah blah blah. Talking talking talking.", "Science", "16m ago"),
                 new Article("Just Another", "https://picsum.photos/seed/eight/300/200", "I'm tired of making up fake content.", "Politics", "23m ago")
