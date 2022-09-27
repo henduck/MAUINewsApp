@@ -7,7 +7,7 @@
              Title="Home">
     <ContentPage.Resources>
         <Style TargetType="StackLayout" x:Key="HeaderStack">
-            <Setter Property="Margin" Value="10,16,10,10"/>
+            <Setter Property="Margin" Value="10,16,10,14"/>
             <Setter Property="Orientation" Value="Horizontal"/>
             <Setter Property="Padding" Value="20,0"/>
         </Style>
@@ -36,7 +36,7 @@
                     <Image Source="{Binding ImageURL}" HeightRequest="180" WidthRequest="300" Aspect="AspectFill" />
                 </Frame>
                 <Label Text="{Binding Title}" FontSize="18" FontFamily="PoppinsSemibold" MaxLines="2"/>
-                <StackLayout Orientation="Horizontal" Spacing="2">
+                <StackLayout Orientation="Horizontal" Spacing="4">
                     <Label Text="{Binding Category}" TextColor="{StaticResource Primary}"/>
                     <Label Text="·" FontAttributes="Bold" TextColor="{StaticResource Gray200}"/>
                     <Label Text="{Binding Time}" TextColor="{StaticResource Gray200}"/>
@@ -61,7 +61,7 @@
                                CornerRadius="4"
                                Padding="8,2"
                                Margin="0,0,4,10">
-                            <Label Text="{Binding .}" FontFamily="PoppinsSemibold"/>
+                            <Label Text="{Binding .}" FontFamily="Poppins" VerticalOptions="Center"/>
                         </Frame>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
@@ -74,7 +74,7 @@
                 <Label Text="Show All" Style="{StaticResource ShowAll}"/>
             </StackLayout>
             <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
-                <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding LatestArticles}" BindableLayout.ItemTemplate="{StaticResource ArticleTemplate}"/>
+                <StackLayout Orientation="Horizontal" Spacing="10" BindableLayout.ItemsSource="{Binding LatestArticles}" BindableLayout.ItemTemplate="{StaticResource ArticleTemplate}"/>
             </ScrollView>
 
             <BoxView />
@@ -84,7 +84,7 @@
                 <Label Text="Show All" Style="{StaticResource ShowAll}"/>
             </StackLayout>
             <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
-                <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding RecommendedArticles}" BindableLayout.ItemTemplate="{StaticResource ArticleTemplate}"/>
+                <StackLayout Orientation="Horizontal" Spacing="10" BindableLayout.ItemsSource="{Binding RecommendedArticles}" BindableLayout.ItemTemplate="{StaticResource ArticleTemplate}"/>
             </ScrollView>
 
             <BoxView />
@@ -94,7 +94,7 @@
                 <Label Text="Show All" Style="{StaticResource ShowAll}"/>
             </StackLayout>
             <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
-                <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding PopularArticles}" BindableLayout.ItemTemplate="{StaticResource ArticleTemplate}"/>
+                <StackLayout Orientation="Horizontal" Spacing="10" BindableLayout.ItemsSource="{Binding PopularArticles}" BindableLayout.ItemTemplate="{StaticResource ArticleTemplate}"/>
             </ScrollView>
         </VerticalStackLayout>
     </ScrollView>

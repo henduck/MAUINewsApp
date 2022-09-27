@@ -1,12 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:MAUIDemo.Views"
+             xmlns:models="clr-namespace:MAUIDemo.Models"
              x:Class="MAUIDemo.Views.SectionsPage"
              Title="Sections">
-    <VerticalStackLayout>
-        <Label 
-            Text="Sections"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="16">
+            <Label 
+                Text="Choose a Topic to Explore"
+                Margin="0,10,20,10"
+                FontFamily="NotoSerifBold"
+                FontSize="28"/>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Sections}"
+                        Direction="Row"
+                        Wrap="Wrap"
+                        JustifyContent="SpaceEvenly"
+                        AlignItems="Stretch"
+                        Margin="-10,0">
+                <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:Category">
+                            <Frame BackgroundColor="{StaticResource Tertiary}"
+                                   FlexLayout.Basis="160"
+                                   FlexLayout.Grow="0.75"
+                                   FlexLayout.Shrink="0.5"
+                                   BorderColor="Transparent"
+                                   Margin="5,10">
+                                <VerticalStackLayout Padding="20,6" VerticalOptions="Center" Spacing="10">
+                                    <Label Text="{Binding MaterialIcon}"
+                                           FontFamily="Material"
+                                           FontSize="34"
+                                           HorizontalOptions="Center"
+                                           TextColor="{StaticResource Gray600}"/>
+                                    <Label Text="{Binding Name}"
+                                           FontFamily="PoppinsSemibold"
+                                           FontSize="16"
+                                           TextColor="{StaticResource Gray600}"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
