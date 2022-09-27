@@ -1,12 +1,13 @@
-﻿using MAUIDemo.ViewModels;
+﻿using MAUIDemo.Services;
+using MAUIDemo.ViewModels;
 
 namespace MAUIDemo.Views;
 
 public partial class SectionsPage : ContentPage
 {
-	public SectionsPage()
+	public SectionsPage(INewsService news)
 	{
 		InitializeComponent();
-		this.BindingContext = new SectionsViewModel();
+		this.BindingContext = new SectionsViewModel(news);
 	}
 }

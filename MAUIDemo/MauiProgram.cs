@@ -1,4 +1,8 @@
-﻿namespace MAUIDemo;
+﻿using MAUIDemo.Services;
+using MAUIDemo.Views;
+using MAUIDemo.ViewModels;
+
+namespace MAUIDemo;
 
 public static class MauiProgram
 {
@@ -7,6 +11,8 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.RegisterAppServices()
+            .RegisterViewModels()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -20,5 +26,24 @@ public static class MauiProgram
 
 		return builder.Build();
 	}
-}
 
+    public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
+    {
+        mauiAppBuilder.Services.AddSingleton<INewsService, MockNewsService>();
+
+        return mauiAppBuilder;
+    }
+
+    public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder mauiAppBuilder)
+    {
+        mauiAppBuilder.Services.AddTransient<HomeViewModel>();
+        mauiAppBuilder.Services.AddTransient<SectionsViewModel>();
+        mauiAppBuilder.Services.AddTransient<ArticleViewModel>();
+
+        mauiAppBuilder.Services.AddTransient<HomePage>();
+        mauiAppBuilder.Services.AddTransient<SectionsPage>();
+        mauiAppBuilder.Services.AddTransient<ArticlePage>();
+
+        return mauiAppBuilder;
+    }
+}

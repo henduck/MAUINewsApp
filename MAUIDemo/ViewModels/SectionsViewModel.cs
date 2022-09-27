@@ -1,29 +1,18 @@
 ﻿using System;
 using MAUIDemo.Models;
+using MAUIDemo.Services;
 using MAUIDemo.Views;
 
 namespace MAUIDemo.ViewModels
 {
     public class SectionsViewModel
     {
-        public SectionsViewModel()
+        public SectionsViewModel(INewsService news)
         {
-            this.Sections = new List<Category>()
-            {
-                new Category("Health", MaterialDesignIcons.Spa),
-                new Category("Politics",MaterialDesignIcons.AccountBalance),
-                new Category("Business",MaterialDesignIcons.Work),
-                new Category("Music",MaterialDesignIcons.MusicNote),
-                new Category("Marketing",MaterialDesignIcons.Store),
-                new Category("Nature",MaterialDesignIcons.LocalFlorist),
-                new Category("Arts",MaterialDesignIcons.ColorLens),
-                new Category("Travel",MaterialDesignIcons.FlightTakeoff),
-                new Category("Food",MaterialDesignIcons.Restaurant),
-                new Category("Style",MaterialDesignIcons.Style),
-            };
+            this.Sections = news.GetCategories();
         }
 
-        public List<Category> Sections { get; set; }
+        public ICollection<Category> Sections { get; set; }
     }
 }
 

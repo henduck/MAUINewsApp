@@ -3,21 +3,21 @@ namespace MAUIDemo.Models
 {
     public class Article
     {
+        public string Id { get; set; }
+
         public string Title { get; }
 
         public string ImageURL { get; }
-
-        public string Body { get; }
 
         public string Category { get; }
 
         public string Time { get; }
 
-        public Article(string title, string imageUrl, string body, string category, string time)
+        public Article(string id, string title, string imageUrl, string category, string time)
         {
+            this.Id = id;
             this.Title = title;
             this.ImageURL = imageUrl;
-            this.Body = body;
             this.Category = category;
             this.Time = time;
         }
