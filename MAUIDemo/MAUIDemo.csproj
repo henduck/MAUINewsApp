@@ -53,6 +53,14 @@
 	  <None Remove="ViewModels\" />
 	  <None Remove="Models\" />
 	  <None Remove="Resources\Fonts\NotoSerif-Bold.ttf" />
+	  <None Remove="Resources\Images\Profile.png" />
+	  <None Remove="Resources\Images\Bookmarks.png" />
+	  <None Remove="Resources\Images\Categories.png" />
+	  <None Remove="Resources\Images\Home.png" />
+	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\categories.png" />
+	  <None Remove="Resources\Images\bookmarks.png" />
+	  <None Remove="Resources\Images\profile.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
@@ -75,5 +83,11 @@
 	  <MauiXaml Update="Views\ArticlePage.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\home.png" />
+	  <EmbeddedResource Include="Resources\Images\categories.png" />
+	  <EmbeddedResource Include="Resources\Images\bookmarks.png" />
+	  <EmbeddedResource Include="Resources\Images\profile.png" />
 	</ItemGroup>
 </Project>

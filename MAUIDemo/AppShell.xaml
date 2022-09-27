@@ -8,16 +8,16 @@
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-       <Tab Title="Home">
+       <Tab x:Name="HomeTab">
            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" Route="home"/>
        </Tab>
-        <Tab Title="Sections">
+        <Tab x:Name="SectionsTab">
            <ShellContent ContentTemplate="{DataTemplate views:SectionsPage}" Route="sections"/>
        </Tab>
-        <Tab Title="Bookmarks">
+        <Tab x:Name="BookmarksTab">
            <ShellContent ContentTemplate="{DataTemplate views:BookmarksPage}" Route="bookmarks"/>
        </Tab>
-       <Tab Title="Profile">
+       <Tab x:Name="ProfileTab">
            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}" Route="profile"/>
        </Tab>
     </TabBar>
