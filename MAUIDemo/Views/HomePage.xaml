@@ -7,7 +7,7 @@
              Title="Home">
     <ContentPage.Resources>
         <Style TargetType="StackLayout" x:Key="HeaderStack">
-            <Setter Property="Margin" Value="10,16,10,14"/>
+            <Setter Property="Margin" Value="20,16,20,14"/>
             <Setter Property="Orientation" Value="Horizontal"/>
             <Setter Property="Padding" Value="20,0"/>
         </Style>
@@ -28,14 +28,14 @@
             <Setter Property="Margin" Value="0,10,0,0"/>
         </Style>
         <DataTemplate x:DataType="models:Article" x:Key="ArticleTemplate">
-            <StackLayout Orientation="Vertical" Margin="10,0,0,0" WidthRequest="300" HeightRequest="260">
+            <StackLayout Orientation="Vertical" Margin="20,0,0,0" WidthRequest="300" HeightRequest="260">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}}, Path=TappedCommand}"/>
+                </StackLayout.GestureRecognizers>
                 <Frame Padding="0" IsClippedToBounds="True" BorderColor="Transparent">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}}, Path=TappedCommand}"/>
-                    </Frame.GestureRecognizers>
                     <Image Source="{Binding ImageURL}" HeightRequest="180" WidthRequest="300" Aspect="AspectFill" />
                 </Frame>
-                <Label Text="{Binding Title}" FontSize="18" FontFamily="PoppinsSemibold" MaxLines="2"/>
+                <Label Text="{Binding Title}" Margin="0,4,0,0" FontSize="18" FontFamily="PoppinsSemibold" MaxLines="2"/>
                 <StackLayout Orientation="Horizontal" Spacing="4">
                     <Label Text="{Binding Category}" TextColor="{StaticResource Primary}"/>
                     <Label Text="·" FontAttributes="Bold" TextColor="{StaticResource Gray200}"/>
@@ -53,7 +53,7 @@
 
             <FlexLayout BindableLayout.ItemsSource="{Binding Tags}"
                         Wrap="Wrap"
-                        Margin="10,0">
+                        Margin="20,0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Frame BackgroundColor="#f2f2f2"

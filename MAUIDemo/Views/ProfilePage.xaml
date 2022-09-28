@@ -2,11 +2,36 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIDemo.Views.ProfilePage"
-             Title="Profile">
-    <VerticalStackLayout>
-        <Label 
-            Text="Profile"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Account">
+    <ContentPage.Resources>
+        <Style TargetType="BoxView">
+            <Setter Property="HeightRequest" Value="1"/>
+            <Setter Property="Color" Value="{StaticResource Gray200}"/>
+            <Setter Property="Margin" Value="-20,10"/>
+        </Style>
+
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="SUBSCRIBER" FontFamily="PoppinsSemibold" TextColor="{StaticResource Gray300}"/>
+            <Label Text="Jesse Smith" FontFamily="PoppinsBold" FontSize="20"/>
+            <BoxView/><Label Text="Edit Subscription Details"/><BoxView/>
+            <ContentView HeightRequest="20"/>
+
+            <Label Text="APP SETTINGS" FontFamily="PoppinsSemibold" TextColor="{StaticResource Gray300}"/>
+            <BoxView/>
+            <Label Text="Push Notifications"/><BoxView/>
+            <Label Text="Display Settings"/><BoxView/>
+            <ContentView HeightRequest="20"/>
+
+            <Label Text="SUPPORT" FontFamily="PoppinsSemibold" TextColor="{StaticResource Gray300}"/>
+            <BoxView/>
+            <Label Text="Frequently Asked Questions"/><BoxView/>
+            <Label Text="Report a Bug"/><BoxView/>
+            <Label Text="Submit a Question"/><BoxView/>
+            <ContentView HeightRequest="40"/>
+
+            <BoxView/><Label Text="Log Out"/><BoxView/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

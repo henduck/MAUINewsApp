@@ -11,7 +11,7 @@
             <Image Source="{Binding ImageURL}" HeightRequest="300" Aspect="AspectFill"/>
             <Label Text="{Binding Title}"
                    FontFamily="NotoSerifBold"
-                   FontSize="20"
+                   FontSize="26"
                    Margin="20,10"/>
             <StackLayout Orientation="Horizontal" Margin="20,0" Spacing="10">
                 <Frame WidthRequest="32" HeightRequest="32" Padding="0" CornerRadius="16"
@@ -23,9 +23,13 @@
                            HorizontalOptions="Center"
                            TextColor="White"/>
                 </Frame>
-                <Label Text="{Binding Time}" VerticalOptions="Center" TextColor="{StaticResource Gray400}"/>
+                <Label Text="{Binding Time}"
+                       VerticalOptions="Center"
+                       TextColor="{StaticResource Gray400}"/>
             </StackLayout>
-            <Label Text="{Binding Body}" Margin="20,0"/>
+            <Label Text="{Binding Body}"
+                   Margin="20,0"
+                   FontSize="16"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
