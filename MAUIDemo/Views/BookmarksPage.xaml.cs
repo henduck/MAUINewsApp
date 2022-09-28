@@ -1,9 +1,13 @@
-﻿namespace MAUIDemo.Views;
+﻿using MAUIDemo.Services;
+using MAUIDemo.ViewModels;
+
+namespace MAUIDemo.Views;
 
 public partial class BookmarksPage : ContentPage
 {
-	public BookmarksPage()
+	public BookmarksPage(INewsService news)
 	{
 		InitializeComponent();
+		this.BindingContext = new BookmarksViewModel(news);
 	}
 }

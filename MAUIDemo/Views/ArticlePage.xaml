@@ -2,17 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:MAUIDemo.ViewModels"
+             xmlns:views="clr-namespace:MAUIDemo.Views"
              x:Class="MAUIDemo.Views.ArticlePage"
              x:DataType="viewmodels:ArticleViewModel"
              Title="">
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout Spacing="10">
             <Image Source="{Binding ImageURL}" HeightRequest="300" Aspect="AspectFill"/>
             <Label Text="{Binding Title}"
                    FontFamily="NotoSerifBold"
                    FontSize="20"
-                   Margin="20"/>
-            <Label Text="{Binding Body}" Margin="20,0,20,0"/>
+                   Margin="20,10"/>
+            <StackLayout Orientation="Horizontal" Margin="20,0" Spacing="10">
+                <Frame WidthRequest="32" HeightRequest="32" Padding="0" CornerRadius="16"
+                       BackgroundColor="{StaticResource Gray200}" BorderColor="Transparent">
+                    <Label Text="{x:Static views:MaterialDesignIcons.AccountCircle}"
+                           FontFamily="Material"
+                           FontSize="28"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="White"/>
+                </Frame>
+                <Label Text="{Binding Time}" VerticalOptions="Center" TextColor="{StaticResource Gray400}"/>
+            </StackLayout>
+            <Label Text="{Binding Body}" Margin="20,0"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

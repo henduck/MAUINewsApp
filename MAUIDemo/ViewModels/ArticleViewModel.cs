@@ -11,6 +11,7 @@ namespace MAUIDemo.ViewModels
 			this.Title = a.Title;
 			this.ImageURL = a.ImageURL;
 			this.Body = news.GetArticleBody(a.Id);
+			this.Time = a.Time;
 		}
 
 		public string Title { get; set; }
@@ -18,5 +19,7 @@ namespace MAUIDemo.ViewModels
 		public string ImageURL { get; set; }
 
 		public string Body { get; set; }
+
+		public string Time { get; set; }
 	}
 }

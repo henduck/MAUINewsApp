@@ -39,10 +39,12 @@ public static class MauiProgram
         mauiAppBuilder.Services.AddTransient<HomeViewModel>();
         mauiAppBuilder.Services.AddTransient<SectionsViewModel>();
         mauiAppBuilder.Services.AddTransient<ArticleViewModel>();
+        mauiAppBuilder.Services.AddTransient<BookmarksViewModel>();
 
         mauiAppBuilder.Services.AddTransient<HomePage>();
         mauiAppBuilder.Services.AddTransient<SectionsPage>();
         mauiAppBuilder.Services.AddTransient<ArticlePage>();
+        mauiAppBuilder.Services.AddTransient<BookmarksPage>();
 
         return mauiAppBuilder;
     }

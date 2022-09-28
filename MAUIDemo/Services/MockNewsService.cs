@@ -46,10 +46,26 @@ namespace MAUIDemo.Services
         {
             return new List<Article>()
             {
-                new Article("001", "Massa ultricies mi quis hendrerit dolor magna eget.", "https://picsum.photos/seed/one/300/200", "Business", "8m ago"),
-                new Article("002", "Auctor elit sed vulputate mi sit amet mauris.", "https://picsum.photos/seed/two/300/200", "Sports", "12m ago"),
-                new Article("003", "Nibh venenatis cras sed felis eget velit aliquet.", "https://picsum.photos/seed/three/300/200", "Science", "16m ago"),
-                new Article("004", "Massa tempor nec feugiat nisl pretium fusce.", "https://picsum.photos/seed/four/300/200", "Politics", "23m ago")
+                new Article("001",
+                    "Massa ultricies mi quis hendrerit dolor magna eget.",
+                    "Ut venenatis tellus in metus vulputate eu. Enim neque volutpat ac tincidunt vitae semper quis.",
+                    "https://picsum.photos/seed/one/300/200",
+                    "Business", "8m ago"),
+                new Article("002",
+                    "Auctor elit sed vulputate mi sit amet mauris.",
+                    "Habitasse platea dictumst vestibulum rhoncus est. Et ligula ullamcorper malesuada proin libero nunc.",
+                    "https://picsum.photos/seed/two/300/200",
+                    "Sports", "12m ago"),
+                new Article("003",
+                    "Nibh venenatis cras sed felis eget velit aliquet.",
+                    "Sollicitudin ac orci phasellus egestas. Nulla facilisi cras fermentum odio eu feugiat pretium nibh.",
+                    "https://picsum.photos/seed/three/300/200",
+                    "Science", "16m ago"),
+                new Article("004",
+                    "Massa tempor nec feugiat nisl pretium fusce.",
+                    "Tellus in metus vulputate eu scelerisque felis imperdiet. Orci eu lobortis elementum nibh tellus molestie nunc non blandit.",
+                    "https://picsum.photos/seed/four/300/200",
+                    "Politics", "23m ago")
             };
         }
 
@@ -57,10 +73,26 @@ namespace MAUIDemo.Services
         {
             return new List<Article>()
             {
-                new Article("005", "Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus.", "https://picsum.photos/seed/nine/300/200", "Business", "9m ago"),
-                new Article("006", "Cursus metus aliquam eleifend mi in nulla posuere.", "https://picsum.photos/seed/ten/300/200", "Sports", "12m ago"),
-                new Article("007", "Consequat interdum varius sit amet mattis vulputate enim nulla.", "https://picsum.photos/seed/eleven/300/200", "Science", "16m ago"),
-                new Article("008", "Augue ut lectus arcu bibendum at varius vel pharetra vel.", "https://picsum.photos/seed/twelve/300/200", "Politics", "23m ago")
+                new Article("005",
+                    "Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus.",
+                    "Tempus quam pellentesque nec nam aliquam sem. Sed faucibus turpis in eu mi bibendum neque.",
+                    "https://picsum.photos/seed/nine/300/200",
+                    "Business", "9m ago"),
+                new Article("006",
+                    "Cursus metus aliquam eleifend mi in nulla posuere.",
+                    "Volutpat lacus laoreet non curabitur gravida arcu. Quis imperdiet massa tincidunt nunc pulvinar sapien et.",
+                    "https://picsum.photos/seed/ten/300/200",
+                    "Sports", "12m ago"),
+                new Article("007",
+                    "Consequat interdum varius sit amet mattis vulputate enim nulla.",
+                    "Elementum integer enim neque volutpat. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus.",
+                    "https://picsum.photos/seed/eleven/300/200",
+                    "Science", "16m ago"),
+                new Article("008",
+                    "Augue ut lectus arcu bibendum at varius vel pharetra vel.",
+                    "Tempus quam pellentesque nec nam aliquam sem. Sed faucibus turpis in eu mi bibendum neque.",
+                    "https://picsum.photos/seed/twelve/300/200",
+                    "Politics", "23m ago")
             };
         }
 
@@ -68,10 +100,26 @@ namespace MAUIDemo.Services
         {
             return new List<Article>()
             {
-                new Article("009", "Dictum fusce ut placerat orci nulla pellentesque.", "https://picsum.photos/seed/five/300/200", "Business", "10m ago"),
-                new Article("010", "Facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat.", "https://picsum.photos/seed/six/300/200", "Sports", "12m ago"),
-                new Article("011", "Volutpat odio facilisis mauris sit amet massa vitae.", "https://picsum.photos/seed/seven/300/200", "Science", "16m ago"),
-                new Article("012", "Blandit volutpat maecenas volutpat blandit aliquam etiam.", "https://picsum.photos/seed/eight/300/200", "Politics", "23m ago")
+                new Article("009",
+                    "Dictum fusce ut placerat orci nulla pellentesque.",
+                    "Volutpat lacus laoreet non curabitur gravida arcu. Quis imperdiet massa tincidunt nunc pulvinar sapien et.",
+                    "https://picsum.photos/seed/five/300/200",
+                    "Business", "10m ago"),
+                new Article("010",
+                    "Facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat.",
+                    "Elementum integer enim neque volutpat. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus.",
+                    "https://picsum.photos/seed/six/300/200",
+                    "Sports", "12m ago"),
+                new Article("011",
+                    "Volutpat odio facilisis mauris sit amet massa vitae.",
+                    "Tempus quam pellentesque nec nam aliquam sem. Sed faucibus turpis in eu mi bibendum neque.",
+                    "https://picsum.photos/seed/seven/300/200",
+                    "Science", "16m ago"),
+                new Article("012",
+                    "Blandit volutpat maecenas volutpat blandit aliquam etiam.",
+                    "Tempus quam pellentesque nec nam aliquam sem. Sed faucibus turpis in eu mi bibendum neque.",
+                    "https://picsum.photos/seed/eight/300/200",
+                    "Politics", "23m ago")
             };
         }
 
@@ -86,6 +134,12 @@ namespace MAUIDemo.Services
                 "\n\n" + "Condimentum mattis pellentesque id nibh tortor id aliquet. Suspendisse faucibus interdum posuere lorem ipsum. Platea dictumst quisque sagittis purus sit amet volutpat. Proin libero nunc consequat interdum varius sit amet mattis. Vivamus arcu felis bibendum ut tristique et. Pulvinar elementum integer enim neque volutpat ac tincidunt. Ornare lectus sit amet est placerat. Sed arcu non odio euismod lacinia at. Placerat orci nulla pellentesque dignissim enim sit. Eros donec ac odio tempor orci dapibus ultrices. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Leo a diam sollicitudin tempor id eu nisl nunc. Mus mauris vitae ultricies leo integer malesuada nunc vel." +
                 "\n\n" + "Felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Viverra accumsan in nisl nisi. In massa tempor nec feugiat nisl pretium. Et netus et malesuada fames ac turpis egestas maecenas. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat. Est sit amet facilisis magna etiam tempor orci eu. Et netus et malesuada fames ac turpis egestas sed tempus. Maecenas pharetra convallis posuere morbi leo urna. Enim nec dui nunc mattis. Convallis a cras semper auctor neque.";
         }
+
+        public ICollection<Article> GetBookmarkedArticles()
+        {
+            var a = this.GetRecommendedArticles();
+            var b = this.GetPopularArticles();
+            return a.Concat(b).ToList();
+        }
     }
 }
-

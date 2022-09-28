@@ -10,6 +10,7 @@ namespace MAUIDemo.Services
         public ICollection<Article> GetLatestArticles();
 		public ICollection<Article> GetRecommendedArticles();
         public ICollection<Article> GetPopularArticles();
+        public ICollection<Article> GetBookmarkedArticles();
         public string GetArticleBody(string articleId);
     }
 }

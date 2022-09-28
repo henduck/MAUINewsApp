@@ -1,12 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MAUIDemo.Models"
+             xmlns:viewmodels="clr-namespace:MAUIDemo.ViewModels"
              x:Class="MAUIDemo.Views.BookmarksPage"
              Title="Bookmarks">
-    <VerticalStackLayout>
-        <Label 
-            Text="Bookmarks"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <CollectionView ItemsSource="{Binding Articles}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:Article">
+                <Border StrokeThickness="0.5">
+                    <ContentView Padding="16">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:BookmarksViewModel}}, Path=TappedCommand}"/>
+                        </ContentView.GestureRecognizers>
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="20"/>
+                            </Grid.RowDefinitions>
+
+                            <Frame Padding="0"
+                                   Grid.Column="0"
+                                   Grid.RowSpan="3"
+                                   BorderColor="Transparent"
+                                   IsClippedToBounds="True">
+                                <Image Source="{Binding ImageURL}"
+                                       Aspect="AspectFill"/>
+                            </Frame>
+                            <Label Text="{Binding Title}"
+                                   Grid.Row="0"
+                                   Grid.Column="1"
+                                   MaxLines="2"
+                                   FontFamily="PoppinsSemibold"
+                                   FontSize="20"/>
+                            <Label Text="{Binding Subtitle}"
+                                   TextColor="{StaticResource Gray400}"
+                                   MaxLines="2"
+                                   Grid.Row="1"
+                                   Grid.Column="1"/>
+                            <StackLayout Orientation="Horizontal"
+                                         Spacing="4"
+                                         Grid.Row="2"
+                                         Grid.Column="1">
+                                <Label Text="{Binding Category}"
+                                       TextColor="{StaticResource Primary}"/>
+                                <Label Text="·"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource Gray200}"/>
+                            <Label Text="{Binding Time}"
+                                   TextColor="{StaticResource Gray200}"/>
+                            </StackLayout>
+                        </Grid>
+                    </ContentView>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        <CollectionView.Footer>
+            <!-- For some reason, last item is hidden behind bottom bar. Add blank footer to compensate. -->
+            <BoxView HeightRequest="100" Color="White"/>
+        </CollectionView.Footer>
+    </CollectionView>
 </ContentPage>
